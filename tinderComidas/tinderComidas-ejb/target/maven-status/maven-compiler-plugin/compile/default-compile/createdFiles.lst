@@ -1,0 +1,17 @@
+tinder\comidas\ec\dao\ComidaDao.class
+tinder\comidas\ec\dao\UsuarioDao.class
+tinder\comidas\ec\model\Comida.class
+tinder\comidas\ec\data\MemberListProducer.class
+tinder\comidas\ec\model\ComidaUsuario.class
+tinder\comidas\ec\service\UsuarioService.class
+tinder\comidas\ec\util\Resources.class
+tinder\comidas\ec\model\Usuario.class
+tinder\comidas\ec\enums\Estado.class
+tinder\comidas\ec\enums\TipoUsuario.class
+tinder\comidas\ec\service\MemberRegistration.class
+tinder\comidas\ec\data\MemberRepository.class
+tinder\comidas\ec\model\Member.class
+tinder\comidas\ec\service\ComidaService.class
+tinder\comidas\ec\service\impl\ComidaServiceImpl.class
+tinder\comidas\ec\model\EntidadBasica.class
+tinder\comidas\ec\service\impl\UsuarioServiceImpl.class

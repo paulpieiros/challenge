@@ -1,0 +1,17 @@
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\dao\ComidaDao.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\dao\UsuarioDao.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\model\Usuario.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\service\MemberRegistration.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\model\Member.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\data\MemberRepository.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\service\impl\ComidaServiceImpl.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\data\MemberListProducer.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\service\impl\UsuarioServiceImpl.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\model\Comida.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\enums\TipoUsuario.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\service\UsuarioService.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\model\EntidadBasica.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\model\ComidaUsuario.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\service\ComidaService.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\enums\Estado.java
+D:\workspace\tinderComidas\tinderComidas-ejb\src\main\java\tinder\comidas\ec\util\Resources.java

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<p:dialog id="dlgNuevaComida" widgetVar="dlgNuevaComidaWvar">
+
+	<p:ajax event="close" resetValues="true" update="dlgNuevaComida"
+		listener="#{adminManager.cleanVariables()}" />
+
+	<h:form id="frmNuevaComida" enctype="multipart/form-data">
+		<p:panel id="pnlNuevaComida">
+
+			<h:panelGrid columns="2">
+
+				<p:outputLabel for="nombre" value="Nombre" />
+				<h:panelGroup>
+					<p:inputText id="nombre" value="#{adminManager.comida.nombre}"
+						required="true" />
+					<p:message for="nombre" />
+				</h:panelGroup>
+				
+				<p:outputLabel for="descripcion" value="Descripcion" />
+				<h:panelGroup>
+					<p:inputTextarea id="descripcion" value="#{adminManager.comida.descripcion}"
+						required="true" />
+					<p:message for="descripcion" />
+				</h:panelGroup>
+				
+				<p:outputLabel for="imagen" value="Imagen" />
+				<h:panelGroup>
+					<p:fileUpload id="imagen" update="nombreImagen" fileUploadListener="#{adminManager.handleFileUpload}" mode="advanced" fileLimit="1" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+					cancelLabel="Cancelar" label="Seleccionar" uploadLabel="Subir"/>
+				</h:panelGroup>
+				<p:outputLabel/>
+				<p:outputLabel id="nombreImagen" value="#{adminManager.nombreImagen}" />
+			</h:panelGrid>
+			
+			<f:facet name="footer">
+				<div align="center" style="margin: auto;">
+					<h:panelGrid columns="2">
+						<p:commandButton value="Guardar" update=":frmAdministracion:tblComida pnlNuevaComida"
+							action="#{adminManager.guardarComida()}"
+							oncomplete="cerrarDialogo(xhr, status, args,'dlgNuevaComidaWvar')" />
+						<p:commandButton value="Cancelar"
+							update=":frmNuevaComida:pnlNuevaComida"
+							action="#{adminManager.cleanVariables()}"
+							oncomplete="PF('dlgNuevaComidaWvar').hide()" />
+					</h:panelGrid>
+
+				</div>
+
+			</f:facet>
+
+		</p:panel>
+
+	</h:form>
+
+</p:dialog>
+</html>

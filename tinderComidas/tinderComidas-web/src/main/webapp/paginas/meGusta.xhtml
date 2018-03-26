@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+	<ui:composition
+		template="/resources/template/template-tinderComidas.xhtml">
+		<ui:define name="content">
+
+			<h:form id="frmMeGusta">
+			<p:commandLink action="#{loginManager.logout()}" value="Logout" />
+				<p:panel id="pnlMeGusta" style="width:700px; margin: auto;">
+					<p:outputLabel value="No hay más información"
+						rendered="#{empty meGustaManager.colaComida}" />
+
+
+					<p:panel rendered="#{not empty meGustaManager.colaComida}">
+						<h:panelGrid columns="2">
+							<p:outputLabel for="nombre" value="Nombre" />
+							<h:panelGroup>
+								<p:inputText id="nombre" value="#{meGustaManager.comida.nombre}" />
+							</h:panelGroup>
+
+							<p:outputLabel for="descripcion" value="Descripcion" />
+							<h:panelGroup>
+								<p:inputTextarea id="descripcion" style="width:500px;"
+									value="#{meGustaManager.comida.descripcion}" />
+							</h:panelGroup>
+							
+							<p:outputLabel for="imagen" value="Imagen" />
+							<h:panelGroup>
+								<p:graphicImage id="imagen" value="#{images.image}" width="300px" height="250px" cache="false"/>
+							</h:panelGroup>
+						</h:panelGrid>
+
+						<f:facet name="footer">
+							<div align="center" style="margin: auto;">
+								<h:panelGrid columns="2">
+									<p:commandButton value="Me Gusta" update="pnlMeGusta imagen" icon="fa-thumbs-o-up"
+										process="@form"
+										action="#{meGustaManager.guardarMeGusta(true)}" />
+									<p:commandButton value="No Me Gusta" update="pnlMeGusta imagen" icon="fa-thumbs-o-down"
+										action="#{meGustaManager.guardarMeGusta(false)}"
+										process="@this" />
+								</h:panelGrid>
+							</div>
+						</f:facet>
+					</p:panel>
+				</p:panel>
+
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+</html>

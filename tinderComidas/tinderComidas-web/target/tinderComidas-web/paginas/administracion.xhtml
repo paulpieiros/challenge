@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition
+		template="/resources/template/template-tinderComidas.xhtml">
+
+		<ui:define name="content">
+
+			<div style="width: 900px; margin: auto;">
+				<p:toolbar>
+					<p:toolbarGroup align="left">
+						<p:commandButton value="Nueva Comida"
+							oncomplete="PF('dlgNuevaComidaWvar').show()"
+							update=":frmNuevaComida:pnlNuevaComida" process="@this" />
+					</p:toolbarGroup>
+				</p:toolbar>
+				<h:form id="frmAdministracion">
+				<p:commandLink action="#{loginManager.logout()}" value="Logout" />
+
+					<p:dataTable id="tblComida" value="#{adminManager.comidaList}"
+						var="dat">
+
+						<p:column headerText="Nombre" width="20%">
+							<h:outputText value="#{dat.nombre}" />
+						</p:column>
+
+						<p:column headerText="Descripcion" width="30%">
+							<h:outputText value="#{dat.descripcion}" />
+						</p:column>
+
+						<p:column headerText="Fecha Creacion" width="15%">
+							<h:outputText value="#{dat.fechaCreacion}">
+								<f:convertDateTime pattern="MM/dd/yyyy" />
+							</h:outputText>
+						</p:column>
+
+						<p:column headerText="Me Gustan" style="text-align: center;">
+							<h:outputText value="#{dat.numeroMeGustan}" />
+						</p:column>
+
+						<p:column headerText="No Me Gustan" style="text-align: center;">
+							<h:outputText value="#{dat.numeroNoMeGustan}" />
+						</p:column>
+
+						<p:column headerText="Sin Respuesta" style="text-align: center;">
+							<h:outputText value="#{dat.numeroNoContestados}" />
+						</p:column>
+
+					</p:dataTable>
+
+				</h:form>
+				<ui:include src="/paginas/dialogos/dlgNuevaComida.xhtml" />
+			</div>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+
+
+</html>

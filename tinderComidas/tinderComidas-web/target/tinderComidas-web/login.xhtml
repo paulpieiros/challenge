@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:body>
+	<ui:composition
+		template="/resources/template/template-tinderComidas.xhtml">
+		<ui:define name="content">
+			<h:form id="frmLogin">
+				
+
+				<p:panel id="pnlLogin" style="width:500px; margin: auto;">
+				<h3>Login Tinder Comidas</h3>
+					<h:panelGrid columns="2">
+						<p:outputLabel for="usuario" value="Usuario" />
+						<h:panelGroup>
+							<p:inputText id="usuario" value="#{loginManager.usuario}" required="true" />
+							<p:message for="usuario" />
+						</h:panelGroup>
+
+						<p:outputLabel for="password" value="Password" />
+						<h:panelGroup>
+							<p:inputText id="password" value="#{loginManager.password}"  required="true"/>
+							<p:message for="password" />
+						</h:panelGroup>
+						
+						<p:commandButton value="Ingresar" update="pnlLogin"
+										process="@form"
+										action="#{loginManager.validateUsuarioPassword()}" />
+					</h:panelGrid>
+				</p:panel>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

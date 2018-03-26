@@ -1,0 +1,10 @@
+tinder\comidas\ec\controller\Images.class
+tinder\comidas\ec\controller\MeGustaController.class
+tinder\comidas\ec\controller\MemberController.class
+tinder\comidas\ec\util\SessionUtils.class
+tinder\comidas\ec\filter\AutorizacionFilter.class
+tinder\comidas\ec\rest\JaxRsActivator.class
+tinder\comidas\ec\controller\AdministracionController.class
+tinder\comidas\ec\rest\MemberResourceRESTService.class
+tinder\comidas\ec\util\WebResources.class
+tinder\comidas\ec\controller\LoginController.class
